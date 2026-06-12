@@ -1,0 +1,155 @@
+/*
+ * The Nagrik — Design Tokens
+ * Primary source of truth: DesignTokens_TheNagrik.md (terracotta accent system).
+ * Supplementary editorial accents & motion: DesignBrief_TheNagrik.md.
+ * All component CSS must reference these variables — never hard-coded values.
+ */
+
+:root {
+  /* ── Colors: Brand Core (DesignTokens §1) ── */
+  --color-bg-primary: #f5f5f0; /* Off-White paper */
+  --color-bg-dark: #1a2332; /* Deep Navy */
+  --color-accent: #c45c3c; /* Terracotta — primary action */
+  --color-accent-hover: #a34b31;
+
+  /* ── Text & Surfaces ── */
+  --color-text-primary: #1a2332;
+  --color-text-secondary: #4a5568;
+  --color-text-inverted: #f5f5f0;
+  --color-surface: #ffffff;
+  --color-surface-muted: #edeae3;
+  --color-border: #d4d0c8;
+
+  /* ── Feedback / Semantic ── */
+  --color-success: #2d7a4d;
+  --color-error: #d32f2f;
+  --color-warning: #ed6c02;
+  --color-info: #0288d1;
+
+  /* ── Supplementary editorial accents (DesignBrief) ── */
+  --color-slate: #6b8a9e; /* cool slate — links/reading bar */
+  --color-pastel-green: #b5d5b0; /* tags, gentle highlights */
+  --color-sky-blue: #a8c8d8; /* subtle badges */
+  --color-warm-white: #fafaf5; /* card surface alt */
+
+  /* ── Typography ── */
+  --font-serif: var(--font-dm-serif), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ── Spacing scale (DesignTokens §3 + DesignBrief 6xl) ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+  --space-6xl: 160px;
+
+  /* ── Radii & borders (DesignTokens §4) ── */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  /* ── Elevation ── */
+  --shadow-sm: 0 1px 2px rgba(26, 35, 50, 0.06);
+  --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
+  --shadow-lg: 0 12px 32px rgba(26, 35, 50, 0.12);
+
+  /* ── Animation (DesignTokens §5) ── */
+  --duration-fast: 0.2s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.8s;
+  --duration-reveal: 1.2s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-subtle: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ── Layout ── */
+  --container-max: 1280px;
+  --container-pad: clamp(20px, 5vw, 80px);
+  --prose-max: 680px;
+  --header-height: 72px;
+  --header-height-scrolled: 60px;
+  --admin-sidebar-width: 256px;
+  --z-header: 100;
+  --z-sidebar: 90;
+  --z-modal: 1000;
+  --z-toast: 1100;
+
+  /* ── Spacing Scale Aliases ── */
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
+  --spacing-5xl: var(--space-5xl);
+  --spacing-6xl: var(--space-6xl);
+
+  /* ── Font Size Scale Aliases ── */
+  --text-xs-size: var(--text-caption);
+  --text-sm-size: var(--text-sm);
+  --text-base-size: var(--text-body);
+  --text-lg-size: var(--text-body-lg);
+  --text-xl-size: var(--text-h5);
+  --text-2xl-size: var(--text-h4);
+  --text-3xl-size: var(--text-h3);
+  --text-4xl-size: var(--text-h2);
+  --text-5xl-size: var(--text-h1);
+
+  /* ── Color Component Aliases ── */
+  --color-primary: var(--color-accent);
+  --color-primary-hover: var(--color-accent-hover);
+  --color-background: var(--color-bg-primary);
+  --color-background-alt: var(--color-warm-white);
+  --color-foreground: var(--color-text-primary);
+  --color-foreground-muted: var(--color-text-secondary);
+  --color-border-subtle: var(--color-border);
+  --color-danger: var(--color-error);
+
+  /* ── Color RGB Variables (for transparency) ── */
+  --color-primary-rgb: 196, 92, 60;     /* #c45c3c */
+  --color-accent-rgb: 196, 92, 60;      /* #c45c3c */
+  --color-success-rgb: 45, 122, 77;     /* #2d7a4d */
+  --color-danger-rgb: 211, 47, 47;      /* #d32f2f */
+  --color-error-rgb: 211, 47, 47;       /* #d32f2f */
+  --color-warning-rgb: 237, 108, 2;     /* #ed6c02 */
+  --color-info-rgb: 2, 136, 209;        /* #0288d1 */
+
+  /* ── Missing Layout & Typography Aliases (DesignBrief Alignment) ── */
+  --max-width: var(--container-max);
+  --font-heading: var(--font-serif);
+  --font-body: var(--font-sans);
+
+  /* ── Font Size Compatibility Scale ── */
+  --font-size-xs: var(--text-caption);
+  --font-size-sm: var(--text-sm);
+  --font-size-md: var(--text-body);
+  --font-size-lg: var(--text-body-lg);
+  --font-size-xl: var(--text-h5);
+  --font-size-2xl: var(--text-h4);
+  --font-size-3xl: var(--text-h3);
+  --font-size-4xl: var(--text-h2);
+  --font-size-5xl: var(--text-h1);
+  --font-size-6xl: var(--text-h1-hero);
+
+  /* ── Color Compatibility Scale ── */
+  --color-text: var(--color-text-primary);
+  --color-text-inverse: var(--color-text-inverted);
+  --color-text-tertiary: var(--color-text-secondary);
+  --color-text-light: var(--color-text-secondary);
+}
+
+/* ── Responsive breakpoints (reference; used via @media in modules) ──
+   Mobile  0
+   Tablet  768px
+   Desktop 1024px
+   Wide    1440px
+*/

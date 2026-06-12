@@ -1,0 +1,117 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-dm-sans);
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+.primary:hover:not(:disabled) {
+  background-color: #0E0E0A; /* Slightly darker/lighter depending on primary */
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-subtle);
+}
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+.outline:hover:not(:disabled) {
+  background-color: var(--color-surface);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+.ghost:hover:not(:disabled) {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+.danger:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* Sizes */
+.sm {
+  height: 32px;
+  padding: 0 var(--spacing-md);
+  font-size: var(--text-sm-size);
+}
+
+.md {
+  height: 48px;
+  padding: 0 var(--spacing-lg);
+  font-size: var(--text-base-size);
+}
+
+.lg {
+  height: 56px;
+  padding: 0 var(--spacing-xl);
+  font-size: var(--text-lg-size);
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: inherit;
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

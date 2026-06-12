@@ -1,0 +1,60 @@
+.editorContainer {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  background: var(--color-surface);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-hover);
+}
+
+.toolbarButton {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.toolbarButton:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.toolbarButton[data-active="true"] {
+  background: var(--color-border);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.editorContent {
+  flex: 1;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+  cursor: text;
+}
+
+.editorContent :global(.ProseMirror) {
+  min-height: 200px;
+  outline: none;
+}
+
+.editorContent :global(.ProseMirror p.is-editor-empty:first-child::before) {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  height: 0;
+}

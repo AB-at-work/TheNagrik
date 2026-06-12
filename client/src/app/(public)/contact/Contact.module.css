@@ -1,0 +1,211 @@
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-top: calc(var(--spacing-3xl) * 1.5);
+  padding-bottom: var(--spacing-4xl);
+  padding-inline: var(--container-pad);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.15rem);
+  color: var(--color-foreground-muted);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card, .linkCard {
+  background: var(--color-surface);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+}
+
+.linkCard {
+  cursor: pointer;
+}
+
+.linkCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--color-foreground-muted);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.linkCard:hover .arrowIcon {
+  transform: translate(2px, -2px);
+  color: var(--color-primary);
+}
+
+.cardIconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.linkCard:hover .cardIconWrapper {
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl-size);
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cardDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground-muted);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-xl);
+  flex-grow: 1;
+}
+
+.emailLink {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-bottom: var(--spacing-md);
+  overflow-wrap: anywhere;
+  font-size: 1.05rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.emailLink:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.phoneList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.phoneLink {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--duration-fast) var(--ease-out);
+  padding: var(--spacing-sm) 0;
+  border-radius: var(--radius-md);
+}
+
+.phoneLink:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.5rem var(--spacing-md);
+  font-size: 0.825rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-foreground-muted);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.copyButton:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-foreground);
+  border-color: var(--color-foreground-muted);
+}
+
+.copyButton.copied {
+  background: rgba(var(--color-success-rgb), 0.08);
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.cardCta {
+  font-weight: 600;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-md);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.linkCard:hover .cardCta {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}

@@ -1,0 +1,41 @@
+{
+  "name": "thenagrik-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Nagrik — content-driven public website and custom admin CMS for a student-led civic literacy initiative.",
+  "workspaces": [
+    "shared",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=shared && npm run build --workspace=client",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,json,css,md}\"",
+    "db:generate": "npm run db:generate --workspace=client",
+    "db:push": "npm run db:push --workspace=client",
+    "db:migrate": "npm run db:migrate --workspace=client",
+    "db:seed": "npm run db:seed --workspace=client",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "prettier": "^3.4.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}

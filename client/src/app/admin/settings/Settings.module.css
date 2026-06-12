@@ -1,0 +1,219 @@
+.container {
+  padding: var(--spacing-2xl) 0;
+  font-family: var(--font-sans);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+  letter-spacing: -0.02em;
+}
+
+.settingsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.groupSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.groupTitle {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-foreground-muted);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.row {
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.rowLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .rowLayout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2xl);
+  }
+}
+
+.infoCol {
+  flex: 1;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-xs);
+}
+
+.keyBadge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--color-foreground-muted);
+  background-color: var(--color-surface-muted);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-foreground-muted);
+  margin-top: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.controlCol {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .controlCol {
+    width: 50%;
+  }
+}
+
+.editorWrapper {
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-sm);
+}
+
+.input, .select {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-foreground);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.input:focus, .select:focus {
+  border-color: var(--color-primary);
+}
+
+.valueDisplay {
+  flex: 1;
+  font-family: monospace;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  word-break: break-all;
+  max-height: 120px;
+  overflow-y: auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.editButton {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: var(--spacing-sm) 0;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.editButton:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.saveButton {
+  padding: 8px 16px;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  padding: 8px 16px;
+  background-color: var(--color-surface-muted);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.cancelButton:hover {
+  background-color: var(--color-border);
+}
+
+.loadingState {
+  padding: var(--spacing-3xl);
+  text-align: center;
+  font-family: var(--font-sans);
+  color: var(--color-foreground-muted);
+}

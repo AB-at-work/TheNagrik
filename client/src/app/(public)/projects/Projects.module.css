@@ -1,0 +1,202 @@
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-top: calc(var(--spacing-3xl) * 1.5);
+  padding-bottom: var(--spacing-4xl);
+  padding-inline: var(--container-pad);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.badgeWrapper {
+  margin-bottom: var(--spacing-xs);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--color-foreground-muted);
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: var(--spacing-2xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-out);
+  border: 1px solid var(--color-border);
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-border);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-surface-muted), var(--color-border));
+}
+
+.statusBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+}
+
+.statusBadge[data-status="active"] {
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+}
+
+.statusBadge[data-status="upcoming"] {
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverted);
+}
+
+.statusBadge[data-status="completed"] {
+  background: var(--color-border);
+  color: var(--color-foreground-muted);
+}
+
+.content {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--spacing-md);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl-size);
+  color: var(--color-foreground);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.description {
+  color: var(--color-foreground-muted);
+  font-size: 0.925rem;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.surveyButton, .detailsButton {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.upcomingWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.upcomingBadge {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.detailsLink {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-foreground-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.detailsLink:hover {
+  color: var(--color-primary);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+  grid-column: 1 / -1;
+}

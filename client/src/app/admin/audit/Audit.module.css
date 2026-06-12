@@ -1,0 +1,227 @@
+.container {
+  padding: var(--spacing-2xl) 0;
+  font-family: var(--font-sans);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-2xl);
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+  letter-spacing: -0.02em;
+}
+
+.filters {
+  display: flex;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    width: auto;
+  }
+}
+
+.select {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-foreground);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .select {
+    flex: initial;
+    min-width: 150px;
+  }
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.thead {
+  background: var(--color-surface-muted);
+}
+
+.th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-foreground-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.tr:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  vertical-align: middle;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: var(--color-foreground-muted);
+  white-space: nowrap;
+}
+
+.userEmail {
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.userId {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--color-foreground-muted);
+  margin-top: 2px;
+}
+
+.entityType {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
+.entityTitle {
+  font-size: 0.85rem;
+  color: var(--color-foreground-muted);
+  margin-top: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badgeCreate {
+  background-color: rgba(45, 122, 77, 0.1);
+  color: var(--color-success);
+}
+
+.badgeUpdate {
+  background-color: rgba(2, 136, 209, 0.1);
+  color: var(--color-info);
+}
+
+.badgeDelete {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: var(--color-danger);
+}
+
+.changes {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--color-foreground-muted);
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message {
+  padding: var(--spacing-2xl);
+  text-align: center;
+  color: var(--color-foreground-muted);
+  font-family: var(--font-sans);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-xl);
+  gap: var(--spacing-md);
+}
+
+.pageInfo {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-foreground);
+}
+
+.prevNextBtn {
+  padding: 8px 16px;
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.prevNextBtn:hover:not(:disabled) {
+  background-color: var(--color-surface-muted);
+  border-color: var(--color-primary);
+}
+
+.prevNextBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

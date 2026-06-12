@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color, #333);
+}
+
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dropzone:hover, .dropzone.active {
+  border-color: #0070f3;
+  background-color: #f0f7ff;
+}
+
+.dropzone.error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+
+.input {
+  display: none;
+}
+
+.previewContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+}
+
+.preview {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.removeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.removeButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.uploadIcon {
+  color: #666;
+  width: 2rem;
+  height: 2rem;
+}
+
+.text {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.errorText {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.loadingText {
+  color: #0070f3;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
