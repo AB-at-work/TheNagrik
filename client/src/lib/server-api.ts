@@ -5,7 +5,13 @@
  */
 import type { ApiResponse, PaginationMeta } from '@thenagrik/shared';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api/v1';
+const getBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/v1`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/api/v1`;
+  return 'http://localhost:3000/api/v1';
+};
+const API_URL = getBaseUrl();
 const DEFAULT_REVALIDATE = 60;
 
 export interface FetchResult<T> {

@@ -6,8 +6,15 @@ export async function GET() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://thenagrik.com';
     
+    const getApiUrl = () => {
+      if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+      if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/v1`;
+      if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/api/v1`;
+      return 'http://localhost:3000/api/v1';
+    };
+
     // Fetch latest blog posts for RSS
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog?limit=20&status=published`);
+    const response = await fetch(`${getApiUrl()}/blog?limit=20&status=published`);
     
     let posts: BlogPostDTO[] = [];
     if (response.ok) {

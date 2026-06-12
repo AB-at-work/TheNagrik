@@ -11,9 +11,15 @@
 import type { ApiResponse, ApiError } from '@thenagrik/shared';
 
 const isServer = typeof window === 'undefined';
-const API_URL = isServer
-  ? (process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3000/api/v1')
-  : '/api/v1';
+
+const getBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/v1`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/api/v1`;
+  return 'http://localhost:3000/api/v1';
+};
+
+const API_URL = isServer ? getBaseUrl() : '/api/v1';
 
 let accessToken: string | null = null;
 
