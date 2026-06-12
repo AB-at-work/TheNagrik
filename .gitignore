@@ -15,6 +15,7 @@ out/
 .env.local
 .env.*.local
 !.env.example
+.env.example
 
 # Logs
 logs/
@@ -40,3 +41,26 @@ drizzle/.cache/
 # Uploads (local dev)
 uploads/
 tmp/
+
+# Project Design Artifacts & Docs
+Website/*.md
+Draft Design- Website.pdf
+pdf_images/
+
+# Local Scratch & Scripts
+last_prompt.txt
+extract_prompt.js
+
+# Keys, Certificates, and Database Files
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+secrets.json
+firebase-adminsdk.json
+client_secret.json
