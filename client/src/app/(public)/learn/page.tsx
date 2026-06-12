@@ -12,13 +12,16 @@ import {
   TrendingUp, 
   Globe 
 } from 'lucide-react';
+import { Metadata } from 'next';
 
 export const revalidate = 3600;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Learn - The Nagrik',
-  description: 'Educational resources and articles on citizenship, rights, and governance.',
+  description: 'Educational resources and civic guides from The Nagrik.',
 };
+
+export const dynamic = 'force-dynamic';
 
 const CATEGORY_MAP: Record<string, { icon: React.ComponentType<any>; desc: string }> = {
   'Constitution': {

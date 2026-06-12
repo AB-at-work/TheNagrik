@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/Button';
 import { ArrowRight, BookOpen, Calendar, MapPin, Users, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'School Programs - The Nagrik',
-  description: 'Bringing civic literacy beyond textbooks. Partner with us to cultivate active citizenship in schools.',
+  title: 'Schools - The Nagrik',
+  description: 'Discover civic engagement programs in schools across India.',
 };
+
+export const dynamic = 'force-dynamic';
 
 export default async function SchoolsPage() {
   const sessions = await getPublicSessions().catch(() => []);

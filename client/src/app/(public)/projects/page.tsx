@@ -8,8 +8,10 @@ import { ExternalLink, ArrowRight, Calendar, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Projects - The Nagrik',
-  description: 'Explore the initiatives and projects led by The Nagrik to drive digital and social change.',
+  description: 'Explore the ongoing civic initiatives and projects by The Nagrik.',
 };
+
+export const dynamic = 'force-dynamic';
 
 // Fallback projects used if the database is empty/offline
 const FALLBACK_PROJECTS = [
