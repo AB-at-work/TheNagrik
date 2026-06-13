@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'Learn more about The Nagrik and our mission.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function AboutPage() {
   // Fetch FAQs on the server
   const faqs = await getPublicFaqs().catch(() => []);

@@ -5,6 +5,8 @@ import { getPublicProjects } from '@/services/projects.service';
 import { Button } from '@/components/ui/Button';
 import styles from './Home.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   // Fetch featured content concurrently on the server
   const [blogs, projects] = await Promise.all([
