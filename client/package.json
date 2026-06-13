@@ -17,7 +17,7 @@
     "@aws-sdk/client-s3": "^3.726.0",
     "@hookform/resolvers": "^3.10.0",
     "@marsidev/react-turnstile": "^1.5.2",
-    "@thenagrik/shared": "file:./shared_copy",
+    "@thenagrik/shared": "workspace:*",
     "@tiptap/extension-image": "^2.10.4",
     "@tiptap/extension-link": "^2.10.4",
     "@tiptap/react": "^2.10.4",
