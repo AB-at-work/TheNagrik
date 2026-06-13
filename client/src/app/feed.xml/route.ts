@@ -4,7 +4,7 @@ import type { BlogPostDTO, PaginatedResponse } from '@thenagrik/shared';
 
 export async function GET() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://thenagrik.com';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.thenagrik.org';
     
     const getApiUrl = () => {
       if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
